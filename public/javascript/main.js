@@ -23,21 +23,25 @@
             });
         });
 
-        // Start of use strict
+        // Contact form success message
+        
         "use strict";
 
-        const session_info = JSON.parse(sessionStorage.getItem("email"));
+        document.addEventListener("DOMContentLoaded", function () {
+            const params = new URLSearchParams(window.location.search);
+            const successDiv = document.getElementById("form-success");
 
-        if (session_info?.status) {
-            $("#user-contact-display").html(
-                `Thank you ${session_info.name} for contacting Branded Rabbit. We'll be in touch soon.`
-            );
-        } else {
-            console.log(
-                "%cNO SESSION DATA AVAILABLE",
-                "color: pink; font-family:impact; font-size: 30px; font-weight:bold; text-shadow: 2px 2px #ff0000;"
-            );
-        }
+            if (params.get("success") === "true" && successDiv) {
+                successDiv.textContent = "✅ Thank you for contacting Branded Rabbit, we'll be in touch soon.";
+
+                // Trigger fade-in after slight delay to ensure transition applies
+                setTimeout(() => {
+                    successDiv.classList.remove("opacity-0");
+                }, 100);
+            }
+        });
+
+
 
 
         // --- JavaScript for Header, Particles, and Scroll Animations ---
