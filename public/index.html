@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branded Rabbit ©</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="./images/favicon.PNG">
+
+    <link rel="stylesheet" href="./css/style.css">
+    
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav id="header-nav" class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#home" class="flex items-center">
+                <img id="header-logo-img" src="./images/header-logo.png" alt="Branded Rabbit Logo" class="h-24 transition-all duration-300">
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <li><a href="#home" class="text-gray-300 hover:text-orange-500 transition-colors">Home</a></li>
+                <li><a href="#services" class="text-gray-300 hover:text-orange-500 transition-colors">Services</a></li>
+                <li><a href="#why-us" class="text-gray-300 hover:text-orange-500 transition-colors">Why Us</a></li>
+                <li><a href="#portfolio" class="text-gray-300 hover:text-orange-500 transition-colors">Portfolio</a></li>
+                <li><a href="#testimonials" class="text-gray-300 hover:text-orange-500 transition-colors">Testimonials</a></li>
+                <li><a href="#contact" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md transition-colors shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40">Contact Us</a></li>
+            </ul>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg id="icon-hamburger" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+
+                <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden backdrop-blur-lg bg-[#0d1119]/80 transition-all duration-500">
+            <ul class="flex flex-col items-center space-y-4 py-4">
+                <li><a href="#home" class="text-gray-300 hover:text-orange-500 transition-colors mobile-link">Home</a></li>
+                <li><a href="#services" class="text-gray-300 hover:text-orange-500 transition-colors mobile-link">Services</a></li>
+                <li><a href="#why-us" class="text-gray-300 hover:text-orange-500 transition-colors mobile-link">Why Us</a></li>
+                <li><a href="#portfolio" class="text-gray-300 hover:text-orange-500 transition-colors mobile-link">Portfolio</a></li>
+                <li><a href="#testimonials" class="text-gray-300 hover:text-orange-500 transition-colors mobile-link">Testimonials</a></li>
+                <li><a href="#contact" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md transition-colors mobile-link">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Banner -->
+        <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-4">
+                <div class="relative group w-32 h-32 mb-8">
+                    <img src="./images/favicon.png" alt="Branded Rabbit Logo" class="w-full h-full absolute top-0 left-0 transition duration-500 ease-in-out group-hover:opacity-0">
+                    <img src="./images/favicon.png" alt="Chroma R" class="w-full h-full absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out chroma-r">
+                    <img src="./images/favicon.png" alt="Chroma G" class="w-full h-full absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out chroma-g">
+                    <img src="./images/favicon.png" alt="Chroma B" class="w-full h-full absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out chroma-b">
+                </div>
+
+            <canvas id="particle-canvas"></canvas>
+            <div class="container text-center px-4 reveal visible">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-4">
+                    Automate. Accelerate.
+                    <span class="block text-orange-500 text-glow">Achieve.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-8">
+                We build powerful AI automation systems for modern businesses. <br>Save time, reduce costs, and drive growth with Branded Rabbit.
+                </p>
+                <a href="#services" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50">
+                    Explore Our Solutions
+                </a>
+                <div class="flex mt-10 space-x-6 text-gray-400 justify-center">
+                    <a href="https://instagram.com/rabbitbranded" target="_blank" aria-label="Instagram" class="hover:text-white transition" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                        </svg>
+                    </a>
+                    <a href="https://tiktok.com/@brandedrabbit" target="_blank" aria-label="TikTok" class="hover:text-white transition" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tiktok" viewBox="0 0 16 16">
+                        <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
+                        </svg>
+                    </a>
+                    <a href="https://youtube.com/@rabbitbranded" target="_blank" aria-label="YouTube" class="hover:text-white transition" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                        <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:info@brandedrabbit.com" aria-label="Email" class="hover:text-white transition" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                        <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Services -->
+        <section id="services" class="section">
+            <div class="container mx-auto text-center">
+                <div class="reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">What We Offer</h2>
+                    <p class="text-gray-400 max-w-4xl mx-auto mb-16" style="text-align: justify">
+                        At the heart of everything we do is intelligent automation. We help businesses simplify complexity, reduce friction, and scale smarter through tailor-made AI solutions. Whether you're just starting your automation journey or looking to fine-tune your existing systems, we offer flexible, high-impact tools designed to fit seamlessly into your day-to-day operations. From custom-built AI chatbots that provide 24/7 customer support, to automating repetitive back-office workflows, to decoding your data with powerful analytics – our mission is to make artificial intelligence feel effortless and accessible. If your brand values efficiency, innovation, and meaningful customer engagement, we’re ready to bring that vision to life.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Chatbots -->
+                    <div class="landio-card reveal">
+                        <div class="landio-card-content">
+                            <div class="mb-6">
+                               <svg class="w-20 h-20 mx-auto" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f97316"/><stop offset="100%" stop-color="#ea580c"/></linearGradient></defs><path d="M62 40C62 52.1503 52.1503 62 40 62C27.8497 62 18 52.1503 18 40C18 27.8497 27.8497 18 40 18C52.1503 18 62 27.8497 62 40Z" stroke="url(#grad1)" stroke-width="4"/><circle cx="32" cy="40" r="3" fill="#d1d5db"/><circle cx="40" cy="40" r="3" fill="#d1d5db"/><circle cx="48" cy="40" r="3" fill="#d1d5db"/></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Custom AI Chatbots</h3>
+                            <p class="text-gray-400 text-sm">Engage customers 24/7 with intelligent chatbots for your website, WhatsApp, or social media.</p>
+                        </div>
+                    </div>
+                    <!-- Automation -->
+                    <div class="landio-card reveal" style="transition-delay: 150ms;">
+                         <div class="landio-card-content">
+                            <div class="mb-6">
+                                <svg class="w-20 h-20 mx-auto" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fb923c"/><stop offset="100%" stop-color="#f97316"/></linearGradient></defs><path d="M25 20H55L65 30V60H15V30L25 20Z" stroke="url(#grad2)" stroke-width="4" fill="none"/><path d="M25 40H45M25 50H55" stroke="#d1d5db" stroke-width="3" stroke-linecap="round"/></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Process Automation</h3>
+                            <p class="text-gray-400 text-sm">Eliminate manual data entry, automate reporting, and streamline internal processes to boost efficiency.</p>
+                        </div>
+                    </div>
+                    <!-- Data Analysis -->
+                    <div class="landio-card reveal" style="transition-delay: 300ms;">
+                         <div class="landio-card-content">
+                            <div class="mb-6">
+                                <svg class="w-20 h-20 mx-auto" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="grad3" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#fdba74"/><stop offset="100%" stop-color="#f97316"/></linearGradient></defs><rect x="22" y="45" width="12" height="20" rx="3" fill="url(#grad3)" opacity="0.6"/><rect x="39" y="25" width="12" height="40" rx="3" fill="url(#grad3)"/><rect x="56" y="35" width="12" height="30" rx="3" fill="url(#grad3)" opacity="0.8"/></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">AI Data Analysis</h3>
+                            <p class="text-gray-400 text-sm">Turn raw data into actionable insights. We build systems to analyze sales, customers, and market trends.</p>
+                        </div>
+                    </div>
+
+                    <!-- Insert Additional Cards Here - To Be Provided by Reece -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="container mx-auto"><hr class="section-divider"></div>
+        
+        <!-- Information Section -->
+        <section id="why-us" class="section">
+            <div class="container mx-auto">
+                <div class="text-center reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Why Choose Branded Rabbit?</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto mb-16">We're not just another agency. We're your dedicated partner in innovation.</p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <!-- Left Column: Visual -->
+                    <div id="why-us-visual" class="reveal">
+                        <div class="icon-showcase p-8">
+                            <svg class="w-full h-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="why-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#f97316"/>
+                                        <stop offset="100%" stop-color="#fb923c"/>
+                                    </linearGradient>
+                                    <filter id="why-glow-filter" x="-50%" y="-50%" width="200%" height="200%">
+                                        <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+                                        <feMerge>
+                                            <feMergeNode in="coloredBlur"/>
+                                            <feMergeNode in="SourceGraphic"/>
+                                        </feMerge>
+                                    </filter>
+                                </defs>
+                                <!-- Connections -->
+                                <path d="M100 100 L 50 50 M100 100 L 50 150 M100 100 L 150 50 M100 100 L 150 150" stroke="url(#why-grad)" stroke-width="2" opacity="0.5" />
+                                <!-- Central Node -->
+                                <circle id="central-node" cx="100" cy="100" r="20" fill="url(#why-grad)" />
+                                <circle cx="100" cy="100" r="10" fill="white"/>
+                                <!-- Outer Nodes -->
+                                <circle id="node1" data-cx="50" data-cy="50" class="why-us-node" cx="50" cy="50" r="15" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="1"/>
+                                <circle id="node2" data-cx="150" data-cy="50" class="why-us-node" cx="150" cy="50" r="15" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="1"/>
+                                <circle id="node3" data-cx="50" data-cy="150" class="why-us-node" cx="50" cy="150" r="15" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="1"/>
+                                <circle id="node4" data-cx="150" data-cy="150" class="why-us-node" cx="150" cy="150" r="15" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="1"/>
+                                <!-- Glow Ball for Animation -->
+                                <circle id="glow-ball" r="5" />
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- Right Column: Text Points -->
+                    <div class="reveal">
+                        <ul class="space-y-6">
+                            <li class="flex items-start why-us-item" data-target-node="node1">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-orange-500 text-white"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-bold text-white">Risk-Free Trials</h4>
+                                    <p class="mt-1 text-gray-400">Test drive our solutions with a no-obligation free trial or demo. See the value for yourself before you commit.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start why-us-item" data-target-node="node2">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-orange-500 text-white"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-bold text-white">Unbeatable Value</h4>
+                                    <p class="mt-1 text-gray-400">We're confident in our pricing. We will happily beat any competitor's quote for a comparable solution, guaranteed.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start why-us-item" data-target-node="node3">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-orange-500 text-white"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-bold text-white">Transparent Partnership</h4>
+                                    <p class="mt-1 text-gray-400">Our interactive team works directly with you. We believe in full transparency, open communication, and no confusing jargon.</p>
+                                </div>
+                            </li>
+                             <li class="flex items-start why-us-item" data-target-node="node4">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-orange-500 text-white"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg></div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-bold text-white">Future-Proof Solutions</h4>
+                                    <p class="mt-1 text-gray-400">We build scalable systems on robust architecture, ensuring your automation evolves with your business, not against it.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="container mx-auto"><hr class="section-divider"></div>
+
+        <!-- Section 3: Portfolio -->
+        <section id="portfolio" class="section">
+        <div class="container mx-auto text-center">
+            <div class="reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Our Work in Action</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-12">
+                See how we've helped businesses across various sectors in Africa to innovate and grow.
+            </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Portfolio Item 1 -->
+            <div class="bg-gray-800 rounded-lg overflow-hidden pop-out-card reveal">
+                <div class="relative w-full h-48 bg-gray-800 flex items-center justify-center">
+                <span class="text-white text-2xl font-bold">
+                    Support Streamlining
+                </span>
+                </div>
+                <div class="p-6 text-left">
+                <h3 class="text-lg font-bold text-white">E-commerce Chatbot</h3>
+                <p class="text-sm text-orange-400 mb-2">Retail Sector | Johannesburg, SA</p>
+                <p class="text-gray-400 text-sm">
+                    Automated 80% of customer queries for an online fashion store, boosting sales conversions by 15%.
+                </p>
+                </div>
+            </div>
+
+            <!-- Portfolio Item 2 -->
+            <div class="bg-gray-800 rounded-lg overflow-hidden pop-out-card reveal" style="transition-delay: 150ms;">
+                <div class="relative w-full h-48 bg-gray-800 flex items-center justify-center">
+                <span class="text-white text-2xl font-bold">
+                    Operations Automation
+                </span>
+                </div>
+                <div class="p-6 text-left">
+                <h3 class="text-lg font-bold text-white">Invoice Processing Automation</h3>
+                <p class="text-sm text-orange-400 mb-2">FinTech Sector | Lagos, NG</p>
+                <p class="text-gray-400 text-sm">
+                    Reduced manual invoice processing time by 95% for a growing financial services company.
+                </p>
+                </div>
+            </div>
+
+            <!-- Portfolio Item 3 -->
+            <div class="bg-gray-800 rounded-lg overflow-hidden pop-out-card reveal" style="transition-delay: 300ms;">
+                <div class="relative w-full h-48 bg-gray-800 flex items-center justify-center">
+                <span class="text-white text-2xl font-bold">
+                    Marketing Resources
+                </span>
+                </div>
+                <div class="p-6 text-left">
+                <h3 class="text-lg font-bold text-white">Social Media Content AI</h3>
+                <p class="text-sm text-orange-400 mb-2">Marketing Sector | Nairobi, KE</p>
+                <p class="text-gray-400 text-sm">
+                    Developed an AI tool to generate draft social media posts, saving the marketing team 10+ hours per week.
+                </p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+
+
+
+        <!-- Divider -->
+        <div class="container mx-auto"><hr class="section-divider"></div>
+
+        <!-- Section 4: Testimonials -->
+        <section id="testimonials" class="section">
+            <div class="container mx-auto text-center">
+                <div class="reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-12">What Our Partners Say</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-gray-900 p-8 rounded-lg pop-out-card reveal">
+                        <p class="text-gray-300 italic mb-6">"Branded Rabbit completely transformed our customer service. The AI chatbot they built is efficient, smart, and our customers love it. A game-changer for our business."</p>
+                        <div>
+                            <p class="font-bold text-white">Thabo Ndlovu</p>
+                            <p class="text-sm text-orange-400">CEO, Safari Gear Online</p>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="bg-gray-900 p-8 rounded-lg pop-out-card reveal" style="transition-delay: 150ms;">
+                        <p class="text-gray-300 italic mb-6">"The level of professionalism and technical expertise is unmatched. They automated our most tedious back-office tasks, freeing up our team to focus on strategic growth."</p>
+                        <div>
+                            <p class="font-bold text-white">Amina Kariuki</p>
+                            <p class="text-sm text-orange-400">Operations Director, Kenya Logistics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="container mx-auto"><hr class="section-divider"></div>
+
+        <!-- Section 5: Contact -->
+        <section id="contact" class="section">
+        <div class="container mx-auto">
+            <div class="text-center reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Let's Build Your Future</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-12">
+                Ready to see how AI can revolutionize your business? Get in touch with us for a free consultation.
+            </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-gray-800 rounded-lg p-8 md:p-12 border border-gray-700 reveal">
+            <form action="https://formsubmit.co/info@brandedrabbit.com" method="POST">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <input type="text" name="name" placeholder="Your Name" 
+                        class="bg-gray-700 text-white p-3 rounded-md border border-gray-600 
+                                focus:outline-none focus:ring-2 focus:ring-orange-500" required>
+
+                <input type="email" name="email" placeholder="Your Email" 
+                        class="bg-gray-700 text-white p-3 rounded-md border border-gray-600 
+                                focus:outline-none focus:ring-2 focus:ring-orange-500" required>
+                </div>
+
+                <input type="text" name="company" placeholder="Company Name" 
+                    class="w-full bg-gray-700 text-white p-3 rounded-md border border-gray-600 mb-6 
+                            focus:outline-none focus:ring-2 focus:ring-orange-500">
+
+                <textarea name="message" placeholder="Tell us about your project..." rows="5" 
+                        class="w-full bg-gray-700 text-white p-3 rounded-md border border-gray-600 mb-6 
+                                focus:outline-none focus:ring-2 focus:ring-orange-500" required></textarea>
+
+                <!-- Hidden inputs for FormSubmit -->
+                <input type="hidden" name="_subject" value="New Contact Form Submission">
+                <input type="hidden" name="_next" value="https://brandedrabbit.com/#contact.html">
+                <input type="hidden" name="_captcha" value="false">
+
+                <div class="text-center">
+                <button type="submit" 
+                        class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 
+                                rounded-lg text-lg transition-all duration-300 hover:scale-105 
+                                shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50">
+                    Send Message
+                </button>
+                </div>
+            </form>
+            </div>
+        </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0d1119] text-gray-400 border-t border-gray-800 mt-20">
+    <div class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+        
+        <div>
+        <h2 class="text-white text-lg font-semibold mb-4">Branded Rabbit</h2>
+        <p class="text-sm leading-relaxed">
+            AI Automation Specialists<br>
+            Based in South Africa, Serving Africa.
+        </p>
+        </div>
+
+        <div>
+        <h3 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Explore</h3>
+        <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white transition">Home</a></li>
+            <li><a href="#" class="hover:text-white transition">About</a></li>
+            <li><a href="#" class="hover:text-white transition">Services</a></li>
+            <li><a href="#" class="hover:text-white transition">Portfolio</a></li>
+        </ul>
+        </div>
+
+        <div>
+        <h3 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Resources</h3>
+        <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white transition">Blog</a></li>
+            <li><a href="#" class="hover:text-white transition">FAQs</a></li>
+            <li><a href="#" class="hover:text-white transition">Support</a></li>
+            <li><a href="#" class="hover:text-white transition">Terms & Privacy</a></li>
+        </ul>
+        </div>
+
+        <div>
+        <h3 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Stay Connected</h3>
+        <div class="flex space-x-4">
+                    <a href="https://instagram.com/rabbitbranded" target="_blank" aria-label="Instagram" class="hover:text-white transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                        </svg>
+                    </a>
+                    <a href="https://tiktok.com/@brandedrabbit" aria-label="TikTok" class="hover:text-white transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tiktok" viewBox="0 0 16 16">
+                        <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
+                        </svg>
+                    </a>
+                    <a href="https://youtube.com/@rabbitbranded" target="_blank" aria-label="YouTube" class="hover:text-white transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                        <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:info@brandedrabbit.com" aria-label="Email" class="hover:text-white transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                        <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+                        </svg>
+                    </a>
+                </div>
+        </div>
+    </div>
+
+    <div class="border-t border-gray-800 py-4 px-6 text-center text-sm text-gray-500">
+        <p>&copy; 2025 Phase Three Trading (Pty) Ltd t/a Branded Rabbit. All Rights Reserved.</p>
+    </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./javascript/main.js"></script>
+
+    <!-- Whatsapp Button -->
+        <script defer>
+            var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?10036';
+            var s = document.createElement('script');
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = url;
+            var options = {
+                "enabled":true,
+                "chatButtonSetting":{
+                "backgroundColor":"#4dc247",
+                "ctaText":"",
+                "borderRadius":"25",
+                "marginLeft":"25",
+                "marginBottom":"50",
+                "marginRight":"0",
+                "position":"left",
+            },
+                "brandSetting":{
+                "brandName":"Branded Rabbit",
+                "brandSubTitle":"Typically replies within a couple of hours",
+                "brandImg":"https://i.imgur.com/Z3UtgHr.jpeg",
+                "welcomeText":"How can we help you?",
+                "messageText":"Hello, I have a question about {{page_link}}",
+                "backgroundColor":"#0a5f54",
+                "ctaText":"Start Chat",
+                "borderRadius":"25",
+                "autoShow":false,
+                "phoneNumber":"27847884166"
+            }
+            };
+                s.onload = function() {
+                CreateWhatsappChatWidget(options);
+            };
+            var x = document.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(s, x);
+        </script>
+
+</body>
+</html>
