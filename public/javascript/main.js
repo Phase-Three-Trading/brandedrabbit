@@ -11,7 +11,7 @@
             mobileMenu.classList.toggle('hidden');
             iconHamburger.classList.toggle('hidden');
             iconClose.classList.toggle('hidden');
-            header.classList.toggle('menu-open'); // 👈 add this
+            header.classList.toggle('menu-open');
         });
 
         mobileLinks.forEach(link => {
@@ -19,10 +19,25 @@
                 mobileMenu.classList.add('hidden');
                 iconHamburger.classList.remove('hidden');
                 iconClose.classList.add('hidden');
-                header.classList.remove('menu-open'); // 👈 remove it
+                header.classList.remove('menu-open');
             });
         });
 
+        // Start of use strict
+        "use strict";
+
+        const session_info = JSON.parse(sessionStorage.getItem("email"));
+
+        if (session_info?.status) {
+            $("#user-contact-display").html(
+                `Thank you ${session_info.name} for contacting Branded Rabbit. We'll be in touch soon.`
+            );
+        } else {
+            console.log(
+                "%cNO SESSION DATA AVAILABLE",
+                "color: pink; font-family:impact; font-size: 30px; font-weight:bold; text-shadow: 2px 2px #ff0000;"
+            );
+        }
 
 
         // --- JavaScript for Header, Particles, and Scroll Animations ---
