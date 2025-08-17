@@ -27,18 +27,47 @@
         
         "use strict";
 
-        document.addEventListener("DOMContentLoaded", function () {
-            const params = new URLSearchParams(window.location.search);
-            const successDiv = document.getElementById("form-success");
+        document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("contact-form");
+        if (!form) return; // exit if no form on this page
 
-            if (params.get("success") === "true" && successDiv) {
-                successDiv.textContent = "✅ Thank you for contacting Branded Rabbit, we'll be in touch soon.";
+        const successEl = document.getElementById("form-success");
+        const errorEl = document.getElementById("form-error");
+        const submitBtn = form.querySelector('button[type="submit"]');
 
-                // Trigger fade-in after slight delay to ensure transition applies
-                setTimeout(() => {
-                    successDiv.classList.remove("opacity-0");
-                }, 100);
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault(); // stop normal submit/redirect
+            successEl.textContent = "";
+            errorEl.textContent = "";
+
+            // disable button while sending
+            submitBtn.disabled = true;
+            submitBtn.classList.add("opacity-60", "cursor-not-allowed");
+
+            try {
+            const endpoint = "https://formsubmit.co/ajax/f54ffaec74334d67b3c8048b80f2a650";
+            const formData = new FormData(form);
+
+            const res = await fetch(endpoint, {
+                method: "POST",
+                body: formData,
+                headers: { "Accept": "application/json" }
+            });
+
+            if (!res.ok) throw new Error("Network error");
+
+            // success
+            successEl.textContent = "✅ Thank you for contacting Branded Rabbit, we'll be in touch soon.";
+            form.reset();
+            } catch (err) {
+            errorEl.textContent = "⚠️ Something went wrong. Please try again or email us directly.";
+            console.error(err);
+            } finally {
+            // re-enable button
+            submitBtn.disabled = false;
+            submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
             }
+        });
         });
 
 
