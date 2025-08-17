@@ -71,10 +71,7 @@
         <!-- Hero Banner -->
         <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-4">
                 <div class="relative group w-32 h-32 mb-8">
-                    <img src="./images/favicon.png" alt="Branded Rabbit Logo" class="w-full h-full absolute top-0 left-0 transition duration-500 ease-in-out group-hover:opacity-0">
-                    <img src="./images/favicon.png" alt="Chroma R" class="w-full h-full absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out chroma-r">
-                    <img src="./images/favicon.png" alt="Chroma G" class="w-full h-full absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out chroma-g">
-                    <img src="./images/favicon.png" alt="Chroma B" class="w-full h-full absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out chroma-b">
+                    <img src="./images/logo.png" alt="Branded Rabbit Logo" class="w-full h-full absolute top-0 left-0 transition duration-500 ease-in-out group-hover:opacity-0">
                 </div>
 
             <canvas id="particle-canvas"></canvas>
@@ -379,10 +376,9 @@
                         class="w-full bg-gray-700 text-white p-3 rounded-md border border-gray-600 mb-6 
                                 focus:outline-none focus:ring-2 focus:ring-orange-500" required></textarea>
 
-                <!-- Hidden inputs for FormSubmit -->
                 <input type="hidden" name="_subject" value="New Contact Form Submission">
-                <input type="hidden" name="_next" value="https://brandedrabbit.com/#contact.html">
-                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://brandedrabbit.com/#contact">
+                <input type="hidden" name="_captcha" value="true">
 
                 <div class="text-center">
                 <button type="submit" 
