@@ -57,10 +57,10 @@
             if (!res.ok) throw new Error("Network error");
 
             // success
-            successEl.textContent = "✅ Thank you for contacting Branded Rabbit, we'll be in touch soon.";
+            successEl.textContent = "Thank you for contacting Branded Rabbit, we'll be in touch soon.";
             form.reset();
             } catch (err) {
-            errorEl.textContent = "⚠️ Something went wrong. Please try again or email us directly.";
+            errorEl.textContent = "Something went wrong. Please try again or email us directly.";
             console.error(err);
             } finally {
             // re-enable button
